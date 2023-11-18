@@ -4,15 +4,17 @@ defmodule LinkedLists do
     """
 
     @doc """
-    Returns the essentials setup work from home list.
+    Returns the `essentials_setup_work_from_home_list`.
+
+    Returns `list` of `strings`
 
     ## Examples
 
-            iex> LinkedLists.get_essentials_setup_work_from_home()
+            iex> LinkedLists.get_essentials_setup_work_from_home_list()
             ["Laptop", "Gaming chair", "Mouse", "Keyboard", "External monitors", "Desk organizer", "Headphones", "Coffee", "Water", "Snacks"]
 
     """
-    def get_essentials_setup_work_from_home() do
+    def get_essentials_setup_work_from_home_list() do
         [
             "Laptop",
             "Gaming chair",
@@ -66,20 +68,22 @@ defmodule LinkedLists do
         list ++ [value]
     end
 
+
     @doc """
-    Adds an item to the beginning of the list.
+        Adds a value to the beginning of a list.
 
-    ## Examples
+        ## Examples
 
-            iex> LinkedLists.add_fast(["Laptop", "Gaming chair", "Mouse"], "Keyboard")
-            ["Keyboard", "Laptop", "Gaming chair", "Mouse"]
+                iex> LinkedLists.add_fast(4, [1, 2, 3])
+                [1, 2, 3, 4]
 
-    """
-    def add_fast(list, value) do
-        list
-        |> prepend(value)
-        |> Enum.reverse()
-    end
+        """
+        def add_fast(value, list) do
+            list
+            |> Enum.reverse()
+            |> prepend(value)
+            |> Enum.reverse()
+        end
 
     @doc """
     Prepends an item to the list.
